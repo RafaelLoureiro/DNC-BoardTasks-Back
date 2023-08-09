@@ -4,22 +4,19 @@ env:
   NODE_ENV: production
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-  
 
 on:
   push:
     branches:
       - main
 
-
 jobs:
-
   job1:
     name: CI - Build e criação do artefato
     runs-on: ubuntu-latest
     steps:
       - name: Pegar código do Repositório
-        uses: actions/chekout@v3
+        uses: actions/checkout@v3
 
       - name: Instalando pacotes do npm
         run: npm install
@@ -43,7 +40,6 @@ jobs:
           retention-days: 1
           path: ./
 
-
   job2:
     name: CD - Deploy na Vercel
     needs: job1
@@ -53,7 +49,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: artefato
-        
+
       - name: Instalando pacotes do npm
         run: npm install
 
@@ -71,4 +67,3 @@ jobs:
 
       - name: Deploy do artefato do projeto na Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-

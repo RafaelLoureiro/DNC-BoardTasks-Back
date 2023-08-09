@@ -21,4 +21,4 @@ Antes de tudo, baixe todas dependências do projeto.
 2| Copie o arquivo `EXEMPLO.env` da pasta raiz e renomei para -> .env para as variáveis de ambiente  se definam.
 3| Depois só execute o comando ```npm install``` no terminal da raiz do projeto.
 4| Em seguida execute ```npm run dev``` no terminal da pasta raiz do projeto, para dar start ao servidor.
-5| Depois entre na documentação da API é só acessar ```http://localhost:4000```
+5| Depois entre na documentação da API é só acessar -> ```http://localhost:4000```
