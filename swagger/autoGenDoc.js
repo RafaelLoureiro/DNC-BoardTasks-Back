@@ -20,6 +20,10 @@ let doc = {
             url: "http://localhost:4000",
             description: "Servidor localhost"
         },
+        {
+            url: "https://dnc-board-tasks-back-drab.vercel.app/doc/",
+            description: "Servidor de Produção"
+        },
     ],
     consumes: ['application/json'],
     produces: ['application/json'],
