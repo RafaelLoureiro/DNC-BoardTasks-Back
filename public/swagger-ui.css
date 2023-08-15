@@ -145,7 +145,9 @@
 .swagger-ui [type=reset],
 .swagger-ui [type=submit],
 .swagger-ui button,
-
+.swagger-ui html [type=button] {
+    -webkit-appearance: button
+}
 
 .swagger-ui [type=button]::-moz-focus-inner,
 .swagger-ui [type=reset]::-moz-focus-inner,
@@ -195,6 +197,10 @@
     height: auto
 }
 
+.swagger-ui [type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
 
 .swagger-ui [type=search]::-webkit-search-cancel-button,
 .swagger-ui [type=search]::-webkit-search-decoration {
@@ -3375,6 +3381,10 @@
     }
 }
 
+.swagger-ui .input-reset {
+    -webkit-appearance: none;
+    -moz-appearance: none
+}
 
 .swagger-ui .button-reset::-moz-focus-inner,
 .swagger-ui .input-reset::-moz-focus-inner {
@@ -10186,11 +10196,11 @@
     padding: 0 0 0 10px
 }
 
-.swagger-ui .authorization__btn .locked {
+.swagger-ui .authorization__btn.locked {
     opacity: 1
 }
 
-.swagger-ui .authorization__btn .unlocked {
+.swagger-ui .authorization__btn.unlocked {
     opacity: .4
 }
 
@@ -10973,8 +10983,7 @@
     border-width: 1px
 }
 
-.swagger-ui .parameters-col_description .markdown p,
-.swagger-ui .parameters-col_description .renderedMarkdown p {
+.swagger-ui .parameters-col_description .markdown p {
     margin: 0
 }
 
@@ -11028,8 +11037,7 @@
 }
 
 .swagger-ui .parameter__empty_value_toggle input {
-    margin-right: 7px;
-    width: auto
+    margin-right: 7px
 }
 
 .swagger-ui .parameter__empty_value_toggle.disabled {
@@ -11044,8 +11052,7 @@
     width: 99%
 }
 
-.swagger-ui .response-col_description .markdown p,
-.swagger-ui .response-col_description .renderedMarkdown p {
+.swagger-ui .response-col_description .markdown p {
     margin: 0
 }
 
