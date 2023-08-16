@@ -6,7 +6,7 @@ function tratarErrosEsperados(res, err) {
     if (String(err).includes(`ValidationError:`)) {
         return res.status(400).json({
             status: "Erro",
-            statusMensagem: S(String(err).replace("ValidationError", "")).replace(':', '').s,
+            statusMensagem: S(String(err).replace("ValidationError: ", "")).replaceAll(':', '').s,
             resposta: String(err)
         });
 
@@ -17,9 +17,8 @@ function tratarErrosEsperados(res, err) {
             status: "Erro",
             statusMensagem: String(err).replace("Error: ", ""),
             resposta: String(err)
-        })
+        });
     }
-
 
     //erro inesperado
     console.error(err);
@@ -28,8 +27,6 @@ function tratarErrosEsperados(res, err) {
         statusMensagem: "Houve um erro inseperado, tente mais tarde.",
         resposta: String(err)
     });
-
-
 }
 
 module.exports = tratarErrosEsperados;

@@ -1,5 +1,5 @@
 const mogoose = require('mongoose');
-const validador = require('validator');
+const validator = require('validator');
 
 const esquema = new mogoose.Schema(
     {
@@ -14,9 +14,7 @@ const esquema = new mogoose.Schema(
             lowercase: true,
             index: true,
             validate: {
-                validator: (valorDigitado) => {
-                    return validador.isEmail(valorDigitado)
-                },
+                validator: (valorDigitado) => { return validator.isEmail(valorDigitado) },
                 mensage: 'inválido!'
             }
         },
